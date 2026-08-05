@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap');
+
 * {
   padding: 0;
   margin: 0;
@@ -5,8 +7,8 @@
 }
 
 :root {
-  /* Fondo oscuro para eliminar cualquier tono celeste y resaltar las luces y la flor */
-  --color-bg: linear-gradient(to top, #080e18, #000000);
+  /* Fondo oscuro sin tonos celestes para contrastar las luces y el texto */
+  --color-bg: linear-gradient(to top, #050b14, #000000);
   --line-color: linear-gradient(to left top, #82ff86 20%, #144425, #104e1c);
   --flower-center: radial-gradient(circle, #000, #ff5e00);
   --leaf-color: radial-gradient(circle, #82ff86, #104e1c);
@@ -20,7 +22,6 @@ body {
   align-items: flex-end;
   justify-content: center;
   overflow: hidden;
-  font-family: Arial, sans-serif;
 }
 
 /* 🌻 Flor */
@@ -181,30 +182,33 @@ body {
   100% { transform: translateY(-60vmin); opacity: 0; filter: blur(1vmin); }
 }
 
-/* 💖 Mensaje romántico (Texto blanco sin fondo) */
+/* 💖 Mensaje romántico corregido */
 .mensaje {
   position: absolute;
-  top: 8%;
+  top: 6%;
   left: 50%;
   transform: translateX(-50%);
   z-index: 100;
   text-align: center;
   width: 100%;
   background: transparent;
+  pointer-events: none;
 }
 
 .texto {
   color: #ffffff;
-  font-size: clamp(1.8rem, 4vw, 3rem);
+  font-family: 'Dancing Script', cursive, sans-serif;
+  font-size: clamp(3rem, 7vw, 5.5rem); /* Ajuste dinámico muy visible */
   font-weight: 700;
-  letter-spacing: 2px;
-  background: none;
+  background: transparent;
   background-color: transparent;
   padding: 0;
   margin: 0;
   border: none;
   display: inline-block;
-  /* Resplandor suave para asegurar lectura sin necesidad de caja o fondo */
-  text-shadow: 0 0 10px rgba(255, 255, 255, 0.6),
-               0 0 20px rgba(255, 255, 255, 0.3);
+  white-space: nowrap;
+  /* Brillo suave dorado/blanco para máxima elegancia */
+  text-shadow: 0 0 15px rgba(255, 255, 255, 0.9),
+               0 0 30px rgba(255, 215, 0, 0.6),
+               0 0 45px rgba(255, 165, 0, 0.4);
 }
