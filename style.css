@@ -345,3 +345,33 @@ body{
     }
 }
 
+.mensaje {
+  position: absolute;
+  top: 20%;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 5vmin;
+  font-weight: bold;
+  color: #ff0055;
+  opacity: 0;
+  animation: aparecerMensaje 2s ease forwards;
+  animation-delay: 3.2s; /* aparece justo después de que la flor termina */
+}
+
+.corazon {
+  display: inline-block;
+  margin-left: 1vmin;
+  animation: latido 1s infinite;
+}
+
+@keyframes aparecerMensaje {
+  0% { opacity: 0; transform: translateX(-50%) scale(0.5); }
+  100% { opacity: 1; transform: translateX(-50%) scale(1); }
+}
+
+@keyframes latido {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.3); }
+}
+
+
