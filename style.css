@@ -182,33 +182,38 @@ body {
   100% { transform: translateY(-60vmin); opacity: 0; filter: blur(1vmin); }
 }
 
-/* 💖 Mensaje romántico corregido */
+/* 💖 Contenedor del mensaje (Posicionamiento) */
 .mensaje {
   position: absolute;
-  top: 6%;
+  top: 10%; /* Ajusta esto si quieres moverlo más arriba o abajo */
   left: 50%;
   transform: translateX(-50%);
-  z-index: 100;
+  z-index: 100; /* Asegura que esté por encima de todo */
   text-align: center;
   width: 100%;
-  background: transparent;
-  pointer-events: none;
+  pointer-events: none; /* Evita que interfiera con clics en la flor */
 }
 
+/* ✒️ Estilo del texto (Visibilidad, Tamaño y Fuente) */
 .texto {
-  color: #ffffff;
-  font-family: 'Dancing Script', cursive, sans-serif;
-  font-size: clamp(3rem, 7vw, 5.5rem); /* Ajuste dinámico muy visible */
+  /* 1. Visibilidad y Color (Soluciona el problema de tener que subrayar) */
+  color: #ffffff !important; /* Fuerza el color blanco puro */
+  opacity: 1 !important;    /* Asegura que no sea transparente */
+  visibility: visible !important; /* Asegura que no esté oculto */
+  
+  /* 2. Tamaño y Fuente (Soluciona el problema de la letra chica) */
+  font-family: 'Dancing Script', cursive, sans-serif; /* Usa la fuente romántica si la importaste */
+  font-size: clamp(3.5rem, 10vw, 6rem); /* Tamaño gigante y dinámico */
   font-weight: 700;
-  background: transparent;
-  background-color: transparent;
-  padding: 0;
-  margin: 0;
-  border: none;
-  display: inline-block;
-  white-space: nowrap;
-  /* Brillo suave dorado/blanco para máxima elegancia */
-  text-shadow: 0 0 15px rgba(255, 255, 255, 0.9),
-               0 0 30px rgba(255, 215, 0, 0.6),
-               0 0 45px rgba(255, 165, 0, 0.4);
+  text-transform: none; /* Mantener mayúsculas/minúsculas originales */
+  letter-spacing: 1px;
+
+  /* 3. Estética (Quita fondos extraños y añade brillo) */
+  background: transparent !important; /* Quita cualquier fondo azul o extraño */
+  text-decoration: none !important;  /* Quita subrayados por defecto */
+  
+  /* Brillo intenso para que resalte mucho sobre el fondo oscuro */
+  text-shadow: 0 0 10px rgba(255, 255, 255, 1),
+               0 0 20px rgba(255, 255, 255, 0.8),
+               0 0 40px rgba(255, 215, 0, 0.6); /* Brillo dorado de fondo */
 }
